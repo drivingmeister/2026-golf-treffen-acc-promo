@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F8F8F8">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<!-- 공유 미리보기(카카오톡/메신저): 배포 도메인이 정해지면 og:url / og:image 를 절대 URL로 바꿔 주세요 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Golf Treffen Korea 2026 Official Merchandise">
+<meta property="og:description" content="2026 폭스바겐 골프 트레펜 코리아에서 할인된 가격으로 폭스바겐 공식 액세서리를 만나보세요">
+<meta property="og:image" content="img/kv.jpg">
+<style>
+  :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<title>Golf Treffen Korea 2026 Official Merchandise</title>
+<meta name="description" content="2026 폭스바겐 골프 트레펜 코리아 현장 판매 액세서리 리스트">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  /* Layout: single mobile column (max 480px) mirroring the Volkswagen app accessory catalog —
+     fixed header, KV banner card, chip filter on the grey ground, white list panel with a 2-column grid, footer disclaimer. */
+  :root{
+    --bg:#F8F8F8;          /* page ground (app header/search area) */
+    --panel:#FFFFFF;       /* white list panel */
+    --card:#F7F7F7;        /* product image box */
+    --fg:#000000;          /* titles, icons */
+    --text:#333333;        /* product name / count */
+    --muted:#828793;       /* sort label, secondary */
+    --note:#666666;        /* KV notes, disclaimer */
+    --line:#DDDDDD;        /* search-bar style border */
+    --line-soft:#EBEBEB;
+    --chip:#12182C;        /* selected chip navy */
+    --chip-text:#FFFFFF;
+    --chip-border:#999999;
+    --sale:#E4002C;        /* discount % */
+    --strike:#9A9A9A;
+    --toast:#3A3A3A;
+    --font:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --maxw:480px;
+    --gutter:16px;
+    --hdr:56px;
+    --radius:16px;
+    color-scheme:light;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:var(--font);
+    font-size:15px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    word-break:keep-all;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  button:focus-visible,a:focus-visible{outline:2px solid var(--chip);outline-offset:2px}
+  [hidden]{display:none!important}
+
+  .app{max-width:var(--maxw);margin:0 auto;min-height:100vh;background:var(--bg);position:relative}
+  @media (min-width:600px){ .app{box-shadow:0 0 0 1px var(--line-soft)} }
+
+  /* 1. Header (fixed) */
+  .hdr{
+    position:fixed;top:0;left:0;right:0;z-index:30;
+    margin:0 auto;max-width:var(--maxw);
+    padding-top:env(safe-area-inset-top,0px);
+    background:var(--bg);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .hdr-in{height:var(--hdr);display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter)}
+  .logo{display:flex;align-items:center;height:44px;padding-right:8px}
+  .logo img{width:30px;height:30px}
+  .hdr-title{height:44px;display:flex;align-items:center;font-size:17px;font-weight:500;letter-spacing:-.01em;color:var(--fg)}
+
+  main{padding-top:var(--hdr);padding-bottom:12px}
+
+  /* 2. KV banner */
+  .kv{
+    margin:12px var(--gutter) 0;
+    background:var(--panel);
+    border:1px solid #E6E6E6;
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .kv-img{width:100%;height:auto;aspect-ratio:966/1045;object-fit:cover;background:#000}
+  .kv-body{padding:18px 18px 12px}
+  .kv-lead{margin:0;font-size:15.5px;line-height:1.55;color:#111;text-wrap:balance}
+  .kv-lead strong{font-weight:700;color:var(--fg)}
+  .kv-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-top:12px}
+  .kv-notes{margin:0;padding:0;list-style:none;font-size:13px;line-height:1.55;color:var(--note)}
+  .kv-notes li{padding-left:.9em;text-indent:-.9em}
+  .share{
+    flex:none;width:40px;height:40px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--text);background:var(--card);
+  }
+  .share:active{background:#ECECEC}
+  .share svg{width:20px;height:20px}
+
+  /* 3. Filter chips + count/sort */
+  .chips{display:flex;gap:8px;padding:16px var(--gutter) 14px;overflow-x:auto;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{
+    flex:none;height:40px;padding:0 20px;border-radius:999px;
+    font-size:15px;font-weight:500;line-height:1;
+    color:#666666;background:#FFFFFF;border:1px solid var(--chip-border);
+    display:flex;align-items:center;gap:6px;
+  }
+  .chip[aria-pressed="true"]{background:var(--chip);color:var(--chip-text);border-color:var(--chip)}
+  .chip .n{font-size:13px;font-weight:700;opacity:.9}
+
+  .panel{
+    background:var(--panel);
+    border-radius:20px 20px 0 0;
+    padding:20px var(--gutter) 28px;
+    min-height:60vh;
+  }
+  .list-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .count{font-size:16px;color:var(--text)}
+  .count b{font-weight:700;color:var(--fg)}
+  .sort-btn{display:flex;align-items:center;gap:4px;height:40px;padding:0 2px 0 8px;font-size:15px;color:var(--muted)}
+  .sort-btn svg{width:18px;height:18px}
+
+  /* 4. Product grid */
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}
+  .card{min-width:0}
+  .thumb{
+    position:relative;background:var(--card);border-radius:14px;aspect-ratio:1/1;max-width:100%;
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .thumb img{width:88%;height:88%;object-fit:contain}
+  .thumb.photo img{width:88%;height:auto;max-height:88%;border-radius:4px}
+  .info{padding:10px 2px 0}
+  .name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:4px;padding-top:6px}
+  .name{
+    margin:0;font-size:15px;font-weight:500;line-height:1.35;color:var(--text);
+    min-height:calc(15px * 1.35 * 2);
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .heart{
+    flex:none;width:40px;height:40px;margin:-8px -8px 0 0;
+    display:flex;align-items:center;justify-content:center;color:var(--fg);
+  }
+  .heart svg{width:24px;height:24px;transition:transform .15s ease}
+  .heart svg path{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}
+  .heart[aria-pressed="true"] svg path{fill:currentColor}
+  .heart:active svg{transform:scale(.88)}
+  .was{font-size:12px;color:var(--strike);text-decoration:line-through;margin-top:2px;font-variant-numeric:tabular-nums}
+  .now{display:flex;align-items:baseline;gap:6px;margin-top:1px;font-variant-numeric:tabular-nums}
+  .pct{font-size:15px;font-weight:700;color:var(--sale)}
+  .price{font-size:17px;font-weight:700;color:var(--fg);letter-spacing:-.01em}
+
+  .empty{padding:56px 16px 40px;text-align:center;color:var(--muted)}
+  .empty svg{width:44px;height:44px;margin:0 auto 12px;display:block;color:#C9CBD1}
+  .empty svg path{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+  .empty p{margin:0}
+  .empty .t{font-size:16px;font-weight:500;color:var(--text)}
+  .empty .s{font-size:13.5px;margin-top:4px}
+
+  /* 5. Disclaimer footer */
+  .disclaimer{padding:26px var(--gutter) 40px}
+  .disclaimer h2{margin:0 0 10px;font-size:17px;font-weight:700;color:var(--fg)}
+  .disclaimer p{margin:0;font-size:12.5px;line-height:1.65;color:var(--note)}
+  .disclaimer p + p{margin-top:6px}
+
+  /* Sort bottom sheet */
+  .backdrop{
+    position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.45);
+    opacity:0;pointer-events:none;transition:opacity .2s ease;
+  }
+  .backdrop.open{opacity:1;pointer-events:auto}
+  .sheet{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    margin:0 auto;max-width:var(--maxw);
+    background:var(--panel);border-radius:20px 20px 0 0;
+    padding:10px var(--gutter) calc(20px + env(safe-area-inset-bottom,0px));
+    transform:translateY(105%);transition:transform .24s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 -8px 30px rgba(0,0,0,.12);
+  }
+  .sheet.open{transform:translateY(0)}
+  .sheet-handle{width:40px;height:4px;border-radius:2px;background:#D9D9D9;margin:0 auto 14px}
+  .sheet h2{margin:0 0 14px;font-size:17px;font-weight:700;color:var(--fg)}
+  .sheet-opts{display:flex;flex-direction:column;gap:10px}
+  .opt{
+    height:50px;border-radius:999px;border:1px solid var(--line);
+    font-size:16px;font-weight:500;color:var(--text);background:#FFFFFF;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .opt[aria-pressed="true"]{border:2px solid var(--chip);color:var(--chip);font-weight:700}
+
+  /* Toast */
+  .toast{
+    position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));z-index:60;
+    transform:translateX(-50%) translateY(8px);
+    background:var(--toast);color:#FFFFFF;font-size:14px;font-weight:500;
+    padding:12px 20px;border-radius:8px;white-space:nowrap;
+    opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;
+    box-shadow:0 6px 20px rgba(0,0,0,.18);
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  @media (prefers-reduced-motion:reduce){
+    .sheet,.backdrop,.toast,.heart svg{transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="hdr">
+    <div class="hdr-in">
+      <button class="logo" id="logoBtn" aria-label="새로고침">
+        <img src="img/logo.png" alt="Volkswagen" width="30" height="30">
+      </button>
+      <button class="hdr-title" id="titleBtn">Official Merchandise</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="kv" aria-label="행사 안내">
+      <img class="kv-img" src="img/kv.jpg" alt="GTI 50 · Golf Treffen Korea 2026" width="966" height="1045" fetchpriority="high">
+      <div class="kv-body">
+        <p class="kv-lead"><strong>2026 폭스바겐 골프 트레펜 코리아</strong>에서<br>할인된 가격으로 폭스바겐 공식 액세서리를 만나보세요</p>
+        <div class="kv-foot">
+          <ul class="kv-notes">
+            <li>* 실제 구매는 현장 부스에서 할 수 있습니다.</li>
+            <li>* 하트를 클릭해 마음에 드는 상품을 담아두고, 편하게 체크아웃하세요!</li>
+          </ul>
+          <button class="share" id="shareBtn" aria-label="페이지 링크 복사">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="chips" role="group" aria-label="상품 필터">
+      <button class="chip" id="chipAll" data-filter="all" aria-pressed="true">전체</button>
+      <button class="chip" id="chipLiked" data-filter="liked" aria-pressed="false">선택한 상품<span class="n" id="likedCount" hidden></span></button>
+    </div>
+
+    <section class="panel" aria-label="상품 리스트">
+      <div class="list-head">
+        <div class="count">총 <b id="count">0</b>개</div>
+        <button class="sort-btn" id="sortBtn" aria-haspopup="dialog" aria-expanded="false">
+          <span id="sortLabel">추천순</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <p class="t">아직 담은 상품이 없어요</p>
+        <p class="s">하트를 눌러 마음에 드는 상품을 담아보세요</p>
+      </div>
+    </section>
+
+    <footer class="disclaimer">
+      <h2>Disclaimer</h2>
+      <p>본 페이지는 2026 폭스바겐 골프 트레펜 코리아 현장에서 판매되는 폭스바겐 공식 액세서리 안내를 위해 제작되었습니다. 표시된 가격은 부가세(VAT)가 포함된 금액이며, 할인 혜택은 행사 기간 중 현장 부스 구매에 한해 적용됩니다.</p>
+      <p>상품은 현장 준비 수량에 한해 판매되며, 재고 소진 시 조기 마감될 수 있습니다. 상품 이미지는 실제 상품과 다를 수 있으며, 본 페이지에서는 주문 및 결제가 이루어지지 않습니다.</p>
+    </footer>
+  </main>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" aria-hidden="true">
+  <div class="sheet-handle"></div>
+  <h2 id="sheetTitle">정렬 순서</h2>
+  <div class="sheet-opts" id="sheetOpts">
+    <button class="opt" data-sort="rec" aria-pressed="true">추천순</button>
+    <button class="opt" data-sort="name" aria-pressed="false">가나다순</button>
+    <button class="opt" data-sort="disc" aria-pressed="false">할인순</button>
+    <button class="opt" data-sort="price" aria-pressed="false">가격순</button>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  // Product data: Excel "Sheet1" order (row 5 → 40). n=name, c=code, d=discount %, p=list price, s=sale price (VAT incl.)
+  var PRODUCTS = [{"n":"T1 버스 머니박스","c":"7E908770918R","d":60,"p":58300,"s":23320,"i":"img/01.webp","w":547,"h":365,"photo":false},{"n":"비틀 머니박스","c":"111087709","d":60,"p":46200,"s":18480,"i":"img/02.webp","w":538,"h":371,"photo":false},{"n":"플레이모빌 - 비틀","c":"7E9087511B","d":70,"p":85800,"s":25740,"i":"img/03.webp","w":554,"h":554,"photo":false},{"n":"플레이모빌 - 캠퍼밴","c":"7E9087511A","d":70,"p":107800,"s":32340,"i":"img/04.webp","w":447,"h":447,"photo":false},{"n":"모델카 ID.3 (1:43)","c":"10A099300EK8","d":80,"p":51700,"s":10340,"i":"img/05.webp","w":302,"h":166,"photo":false},{"n":"올트랙 키즈카","c":"5TD087510041","d":80,"p":190300,"s":38060,"i":"img/06.webp","w":507,"h":394,"photo":false},{"n":"주니어비틀 그레이","c":"5C0087500B71N","d":80,"p":221100,"s":44220,"i":"img/07.webp","w":538,"h":371,"photo":false},{"n":"R라인 디자인 백팩","c":"5H6087327","d":70,"p":63800,"s":19140,"i":"img/08.webp","w":425,"h":470,"photo":false},{"n":"실내용 옷걸이","c":"00V061127","d":80,"p":71500,"s":14300,"i":"img/09.webp","w":539,"h":371,"photo":true},{"n":"카시트 보호 커버","c":"000019819C","d":70,"p":89100,"s":26730,"i":"img/10.webp","w":335,"h":245,"photo":true},{"n":"시트백오거나이저","c":"5DA087571A","d":80,"p":57200,"s":11440,"i":"img/11.webp","w":372,"h":537,"photo":false},{"n":"헤리티지 쿠션","c":"7E9069691","d":70,"p":52800,"s":15840,"i":"img/12.webp","w":234,"h":215,"photo":false},{"n":"헤리티지 캠핑체어","c":"7E9069635","d":70,"p":134200,"s":40260,"i":"img/13.webp","w":456,"h":438,"photo":false},{"n":"헤리티지 키즈 캠핑체어","c":"7E9069635A","d":70,"p":78100,"s":23430,"i":"img/14.webp","w":447,"h":447,"photo":false},{"n":"캠퍼벤 파라솔","c":"7E0087605","d":70,"p":127600,"s":38280,"i":"img/15.webp","w":228,"h":221,"photo":false},{"n":"Golf 컬렉션 키태그(네이비)","c":"5HG087010655","d":20,"p":14300,"s":11440,"i":"img/16.webp","w":640,"h":488,"photo":false},{"n":"Golf 컬렉션 키태그(옐로우)","c":"5HG087010287","d":20,"p":14300,"s":11440,"i":"img/17.webp","w":640,"h":488,"photo":false},{"n":"Golf 컬렉션 키태그(퍼플)","c":"5HG087010HTF","d":20,"p":14300,"s":11440,"i":"img/18.webp","w":640,"h":488,"photo":false},{"n":"GTI 컬렉션 키태그","c":"3A4087010A","d":20,"p":22000,"s":17600,"i":"img/19.webp","w":640,"h":488,"photo":false},{"n":"헤리티지 우산","c":"7E9087600","d":20,"p":45100,"s":36080,"i":"img/20.webp","w":640,"h":488,"photo":false},{"n":"비틀 토이카","c":"111087511","d":20,"p":15400,"s":12320,"i":"img/21.webp","w":420,"h":320,"photo":false},{"n":"T1 버스 토이카","c":"211087511A","d":20,"p":15400,"s":12320,"i":"img/22.webp","w":420,"h":320,"photo":false},{"n":"R 컬렉션 투웨이 백팩","c":"3B4087329041","d":20,"p":155100,"s":124080,"i":"img/23.webp","w":420,"h":320,"photo":false},{"n":"R 컬렉션 멀티 오거나이저 백","c":"3B4087317ENF","d":20,"p":42900,"s":34320,"i":"img/24.webp","w":420,"h":320,"photo":false},{"n":"GTI 컬렉션 투웨이 백팩","c":"3A4087329","d":20,"p":103400,"s":82720,"i":"img/25.webp","w":640,"h":488,"photo":false},{"n":"GTI 컬렉션 스포츠백","c":"3A5087318","d":20,"p":103400,"s":82720,"i":"img/26.webp","w":420,"h":320,"photo":false},{"n":"헤리티지 비치백","c":"7E9087317","d":20,"p":90200,"s":72160,"i":"img/27.webp","w":640,"h":488,"photo":false},{"n":"헤리티지 워시백","c":"7E9087317A","d":20,"p":64900,"s":51920,"i":"img/28.webp","w":447,"h":447,"photo":false},{"n":"캘리포니아 컬렉션 폴딩박스","c":"7TG061104A287","d":20,"p":60500,"s":48400,"i":"img/29.webp","w":420,"h":320,"photo":false},{"n":"R 컬렉션 야구 모자","c":"3B4084300041","d":20,"p":51700,"s":41360,"i":"img/30.webp","w":420,"h":320,"photo":false},{"n":"GTI 컬렉션 야구 모자","c":"3A5084300A041","d":20,"p":42900,"s":34320,"i":"img/31.webp","w":640,"h":488,"photo":false},{"n":"캘리포니아 컬렉션 스냅백","c":"7TG084300A212","d":20,"p":42900,"s":34320,"i":"img/32.webp","w":640,"h":488,"photo":false},{"n":"캘리포니아 컬렉션 야구 모자","c":"7TG084300B287","d":20,"p":42900,"s":34320,"i":"img/33.webp","w":640,"h":488,"photo":false},{"n":"헤리티지 야구모자","c":"7E9084300A","d":20,"p":48400,"s":38720,"i":"img/34.webp","w":640,"h":488,"photo":false},{"n":"헤리티지 피크닉매트","c":"7E9084509","d":20,"p":67100,"s":53680,"i":"img/35.webp","w":640,"h":488,"photo":false},{"n":"캘리포니아 컬렉션 비치타월","c":"7TG084500212","d":20,"p":42900,"s":34320,"i":"img/36.webp","w":640,"h":488,"photo":false}];
+  var SORT_LABEL = {rec:'추천순', name:'가나다순', disc:'할인순', price:'가격순'};
+  var LS_KEY = 'vw-golf-treffen-2026-likes';
+
+  var likes = new Set(loadLikes());
+  var filter = 'all';
+  var sort = 'rec';
+
+  var grid = document.getElementById('grid');
+  var emptyEl = document.getElementById('empty');
+  var countEl = document.getElementById('count');
+  var likedCountEl = document.getElementById('likedCount');
+  var sortLabel = document.getElementById('sortLabel');
+  var sortBtn = document.getElementById('sortBtn');
+  var sheet = document.getElementById('sheet');
+  var backdrop = document.getElementById('backdrop');
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+
+  function loadLikes(){
+    try { var raw = localStorage.getItem(LS_KEY); var arr = raw ? JSON.parse(raw) : []; return Array.isArray(arr) ? arr : []; }
+    catch (e) { return []; }
+  }
+  function saveLikes(){
+    try { localStorage.setItem(LS_KEY, JSON.stringify(Array.from(likes))); } catch (e) {}
+  }
+  function won(n){ return '₩' + n.toLocaleString('ko-KR'); }
+
+  // Build cards once
+  var cards = PRODUCTS.map(function(p, idx){
+    var el = document.createElement('article');
+    el.className = 'card';
+    el.dataset.code = p.c;
+    el.innerHTML =
+      '<div class="thumb' + (p.photo ? ' photo' : '') + '"><img src="' + p.i + '" alt="' + esc(p.n) + '" width="' + p.w + '" height="' + p.h + '" loading="lazy" decoding="async"></div>' +
+      '<div class="info">' +
+        '<div class="name-row"><h3 class="name">' + esc(p.n) + '</h3>' +
+        '<button class="heart" type="button" aria-pressed="' + (likes.has(p.c) ? 'true' : 'false') + '" aria-label="' + esc(p.n) + ' 담기">' +
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>' +
+        '</button></div>' +
+        '<div class="was">' + won(p.p) + '</div>' +
+        '<div class="now"><span class="pct">' + p.d + '%</span><span class="price">' + won(p.s) + '</span></div>' +
+      '</div>';
+    var heart = el.querySelector('.heart');
+    heart.addEventListener('click', function(){
+      if (likes.has(p.c)) { likes.delete(p.c); heart.setAttribute('aria-pressed', 'false'); }
+      else { likes.add(p.c); heart.setAttribute('aria-pressed', 'true'); }
+      saveLikes();
+      if (filter === 'liked') render(); else updateCounts();
+    });
+    return {p: p, idx: idx, el: el};
+  });
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  // 가나다순: 영문/숫자로 시작하는 상품명 먼저(A→Z), 그 다음 한글(가→하) — 엑셀 정렬과 동일
+  function nameKey(n){ return /^[A-Za-z0-9]/.test(n) ? 0 : 1; }
+  function byName(a, b){
+    var ka = nameKey(a.p.n), kb = nameKey(b.p.n);
+    if (ka !== kb) return ka - kb;
+    return a.p.n.localeCompare(b.p.n, ka === 0 ? 'en' : 'ko', {sensitivity:'base', numeric:true}) || a.idx - b.idx;
+  }
+  function sorted(){
+    var arr = cards.slice();
+    if (sort === 'name') arr.sort(byName);
+    else if (sort === 'disc') arr.sort(function(a,b){ return (b.p.d - a.p.d) || a.idx - b.idx; });
+    else if (sort === 'price') arr.sort(function(a,b){ return (a.p.s - b.p.s) || a.idx - b.idx; });
+    return arr;
+  }
+
+  function render(){
+    var arr = sorted().filter(function(c){ return filter === 'all' || likes.has(c.p.c); });
+    var frag = document.createDocumentFragment();
+    arr.forEach(function(c){ frag.appendChild(c.el); });
+    grid.textContent = '';
+    grid.appendChild(frag);
+    countEl.textContent = arr.length;
+    emptyEl.hidden = arr.length > 0;
+    grid.hidden = arr.length === 0;
+    updateCounts();
+  }
+  function updateCounts(){
+    var n = likes.size;
+    likedCountEl.textContent = n;
+    likedCountEl.hidden = n === 0;
+    if (filter === 'liked') countEl.textContent = n;
+  }
+
+  // Filter chips
+  document.querySelectorAll('.chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      filter = chip.dataset.filter;
+      document.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      render();
+    });
+  });
+
+  // Sort sheet
+  function openSheet(){
+    sheet.classList.add('open'); backdrop.classList.add('open');
+    sheet.setAttribute('aria-hidden', 'false'); sortBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeSheet(){
+    sheet.classList.remove('open'); backdrop.classList.remove('open');
+    sheet.setAttribute('aria-hidden', 'true'); sortBtn.setAttribute('aria-expanded', 'false');
+  }
+  sortBtn.addEventListener('click', openSheet);
+  backdrop.addEventListener('click', closeSheet);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeSheet(); });
+  document.querySelectorAll('.opt').forEach(function(opt){
+    opt.addEventListener('click', function(){
+      sort = opt.dataset.sort;
+      document.querySelectorAll('.opt').forEach(function(o){ o.setAttribute('aria-pressed', o === opt ? 'true' : 'false'); });
+      sortLabel.textContent = SORT_LABEL[sort];
+      closeSheet();
+      render();
+    });
+  });
+
+  // Header: logo → reload (hearts persist), title → scroll to top
+  function toTop(){ window.scrollTo({top: 0, behavior: 'smooth'}); }
+  document.getElementById('logoBtn').addEventListener('click', function(){
+    try { window.scrollTo(0, 0); } catch (e) {}
+    location.reload();
+  });
+  document.getElementById('titleBtn').addEventListener('click', toTop);
+
+  // Share → copy link + toast
+  function pageUrl(){ return location.href.split('#')[0]; }
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+  function fallbackCopy(text){
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, text.length);
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
+  }
+  document.getElementById('shareBtn').addEventListener('click', function(){
+    var url = pageUrl();
+    var done = function(){ showToast('링크가 복사되었어요🔗'); };
+    var fail = function(){ if (fallbackCopy(url)) done(); else showToast('링크 복사에 실패했어요. 주소창의 링크를 복사해 주세요'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done, fail);
+    } else { fail(); }
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
